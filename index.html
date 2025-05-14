@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SPIDERNET - Soluções tecnológicas personalizadas com excelência, ética e inovação. Desenvolvimento de software sob demanda para diversos segmentos.">
+    <meta name="keywords"
+        content="SPIDERNET, desenvolvimento de software, sistemas personalizados, gerenciamento de igrejas, clínicas, notas de serviço, tecnologia">
+    <meta name="author" content="Davi Rubinho Stanis">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="SPIDERNET - Soluções Tecnológicas Personalizadas">
+    <meta property="og:description"
+        content="Desenvolvemos sistemas personalizados que atendem às necessidades específicas do seu negócio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.spidernetti.info">
+    <title>SPIDERNET | Soluções Tecnológicas Personalizadas</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕸️</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--light);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tech-grid {
+            background-image:
+                linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-pattern {
+            background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 20%);
+        }
+
+        .animated-circle {
+            animation: pulse 6s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>
+
+<body class="tech-grid">
+    <!-- WhatsApp Float Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="https://wa.me/5511940114797" target="_blank"
+            class="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full p-4 shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div
+                        class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md">
+                        SN
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">SPIDERNET</h1>
+                        <p class="text-xs text-gray-500">Nós Confiamos em Deus</p>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 font-medium">Início</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 font-medium">Sobre Nós</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-500 font-medium">Serviços</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 font-medium">Contato</a>
+                </nav>
+
+                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-blue-500">Início</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-blue-500">Sobre Nós</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-blue-500">Serviços</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-500">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative py-20 overflow-hidden tech-pattern">
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 rounded-full filter blur-3xl opacity-20 animated-circle">
+            </div>
+            <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-400 rounded-full filter blur-3xl opacity-20 animated-circle"
+                style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                        <span class="gradient-text">Tecnologia</span> que <span class="gradient-text">Conecta</span> e
+                        <span class="gradient-text">Transforma</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Desenvolvemos sistemas personalizados que atendem às necessidades específicas do seu negócio,
+                        com agilidade, excelência e comprometimento.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 shadow-md hover:shadow-lg">
+                            <i class="fas fa-paper-plane mr-2"></i> Fale Conosco
+                        </a>
+                        <a href="#services"
+                            class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300 hover:shadow-md">
+                            <i class="fas fa-laptop-code mr-2"></i> Nossos Serviços
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="relative w-64 h-64 md:w-80 md:h-80">
+                            <div class="absolute inset-0 bg-blue-500 rounded-full opacity-20 blur-xl"></div>
+                            <div
+                                class="absolute inset-4 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white text-6xl font-bold shadow-2xl">
+                                <i class="fas fa-spider"></i>
+                            </div>
+                            <div
+                                class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg border border-gray-100">
+                                <p class="text-sm font-medium text-gray-700 flex items-center">
+                                    <i class="fas fa-quote-left text-blue-500 mr-1"></i> Nós Confiamos em Deus
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Sobre a <span class="gradient-text">SPIDERNET</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Uma empresa comprometida com a excelência no desenvolvimento de soluções tecnológicas
+                    personalizadas.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="relative">
+                        <div class="bg-gray-100 rounded-xl p-6 shadow-inner">
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="bg-blue-100 h-24 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-code text-blue-600 text-2xl"></i>
+                                </div>
+                                <div class="bg-indigo-100 h-24 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-server text-indigo-600 text-2xl"></i>
+                                </div>
+                                <div class="bg-purple-100 h-24 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-database text-purple-600 text-2xl"></i>
+                                </div>
+                                <div class="bg-green-100 h-24 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-mobile-alt text-green-600 text-2xl"></i>
+                                </div>
+                                <div class="bg-yellow-100 h-24 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-cloud text-yellow-600 text-2xl"></i>
+                                </div>
+                                <div class="bg-red-100 h-24 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-red-600 text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg border border-gray-100 w-3/4">
+                            <h3 class="font-semibold text-gray-800 mb-2">Tecnologias Utilizadas</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-50 text-purple-600 px-2 py-1 rounded text-xs">Delphi</span>
+                                <span class="bg-red-50 text-red-600 px-2 py-1 rounded text-xs">Firebird</span>
+                                <span class="bg-indigo-50 text-indigo-600 px-2 py-1 rounded text-xs">Piton</span>
+                                <span class="bg-gray-50 text-gray-600 px-2 py-1 rounded text-xs">SQL</span>
+                                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded text-xs">Java</span>
+                                <span class="bg-green-50 text-green-600 px-2 py-1 rounded text-xs">C</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Nossa <span
+                            class="gradient-text">Trajetória</span></h3>
+                    <p class="text-gray-600 mb-6">
+                        A SPIDERNET nasceu da paixão por tecnologia e do desejo de oferecer soluções personalizadas que
+                        realmente atendam às necessidades específicas de cada cliente. Sob a liderança do Analista de
+                        Sistemas Sênior Davi Rubinho Stanis, construímos uma reputação de confiança e excelência.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-bullseye text-blue-600"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Missão</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                Desenvolver soluções tecnológicas personalizadas que impulsionem os negócios de nossos
+                                clientes.
+                            </p>
+                        </div>
+
+                        <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-indigo-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-eye text-indigo-600"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Visão</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm">
+                                Ser referência em atendimento com excelência, ética e inovação no desenvolvimento de
+                                software.
+                            </p>
+                        </div>
+
+                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 md:col-span-2">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 p-2 rounded-full mr-4">
+                                    <i class="fas fa-heart text-blue-600"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Valores</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="bg-white px-3 py-1 rounded-full text-sm text-gray-700 shadow-sm flex items-center">
+                                    <i class="fas fa-handshake mr-1 text-blue-500"></i> Confiança
+                                </span>
+                                <span
+                                    class="bg-white px-3 py-1 rounded-full text-sm text-gray-700 shadow-sm flex items-center">
+                                    <i class="fas fa-balance-scale mr-1 text-blue-500"></i> Responsabilidade
+                                </span>
+                                <span
+                                    class="bg-white px-3 py-1 rounded-full text-sm text-gray-700 shadow-sm flex items-center">
+                                    <i class="fas fa-pray mr-1 text-blue-500"></i> Fé
+                                </span>
+                                <span
+                                    class="bg-white px-3 py-1 rounded-full text-sm text-gray-700 shadow-sm flex items-center">
+                                    <i class="fas fa-gem mr-1 text-blue-500"></i> Ética
+                                </span>
+                                <span
+                                    class="bg-white px-3 py-1 rounded-full text-sm text-gray-700 shadow-sm flex items-center">
+                                    <i class="fas fa-lightbulb mr-1 text-blue-500"></i> Inovação
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 tech-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nossos <span class="gradient-text">Serviços</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Cada cliente é único, cada serviço é exclusivo. Desenvolvemos soluções personalizadas para atender
+                    suas necessidades específicas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="bg-blue-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Desenvolvimento de Software Sob Demanda</h3>
+                    <p class="text-gray-600 mb-4">
+                        Soluções personalizadas desenvolvidas especificamente para atender às necessidades do seu
+                        negócio.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <p class="text-sm text-gray-700 italic">
+                            <i class="fas fa-quote-left text-blue-500 mr-1"></i> Cada cliente é único, cada serviço é
+                            exclusivo. Por isso, os valores são definidos conforme a demanda específica. Não trabalhamos
+                            com preços fixos, pois cada solução é personalizada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="bg-indigo-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-church text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sistema para Gerenciamento de Igrejas</h3>
+                    <p class="text-gray-600 mb-4">
+                        Solução completa para administração de igrejas, incluindo gestão de membros, eventos, finanças e
+                        muito mais.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Controle de membros e frequência
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Gestão financeira e dizimistas
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Agendamento de eventos e cultos
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Relatórios personalizados
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="bg-purple-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-clinic-medical text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sistema para Clínicas</h3>
+                    <p class="text-gray-600 mb-4">
+                        Solução completa para gestão de clínicas médicas e odontológicas, com agendamento, prontuários e
+                        faturamento.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-medium text-gray-800 mb-1 flex items-center">
+                                <i class="fas fa-tooth mr-2 text-purple-600"></i> Sistema para Clínicas Dentárias
+                            </h4>
+                            <p class="text-xs text-gray-600">
+                                Embutido no Pegma (em desenvolvimento) - Solução especializada para odontologia.
+                            </p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-medium text-gray-800 mb-1 flex items-center">
+                                <i class="fas fa-exchange-alt mr-2 text-blue-600"></i> Integração com SAT
+                            </h4>
+                            <p class="text-xs text-gray-600">
+                                Nossos sistemas podem ser integrados com SAT para emissão de notas fiscais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl shadow-md border border-gray-100 md:col-span-2 lg:col-span-1">
+                    <div class="bg-green-100 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-file-invoice text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Sistema de Gerenciamento e Emissão de Notas de
+                        Serviço</h3>
+                    <p class="text-gray-600 mb-4">
+                        Solução completa para emissão e gestão de notas fiscais de serviços, com controle financeiro
+                        integrado.
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-medium text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-star mr-2 text-yellow-500"></i> Diferenciais
+                        </h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center">
+                                <i class="fas fa-bolt text-yellow-500 mr-2"></i>
+                                Agilidade no desenvolvimento e implementação
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-headset text-blue-500 mr-2"></i>
+                                Suporte técnico direto com o desenvolvedor
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-cogs text-purple-500 mr-2"></i>
+                                Personalização total conforme necessidade do cliente
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-shield-alt text-red-500 mr-2"></i>
+                                Segurança de dados garantida
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Entre em <span class="gradient-text">Contato</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-700 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Temos a solução perfeita para o seu negócio. Fale conosco e descubra como podemos ajudar.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-user text-gray-400"></i>
+                                </div>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                                    placeholder="Seu nome completo">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-envelope text-gray-400"></i>
+                                </div>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                                    placeholder="seu@email.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensagem</label>
+                            <div class="relative">
+                                <div class="absolute top-3 left-3">
+                                    <i class="fas fa-comment text-gray-400"></i>
+                                </div>
+                                <textarea id="message" name="message" rows="5" required
+                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+                                    placeholder="Como podemos ajudar?"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Enviar Mensagem
+                        </button>
+                    </form>
+
+                    <div id="form-success"
+                        class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg border border-green-200 flex items-center">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        Mensagem enviada com sucesso! Entraremos em contato em breve.
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-sm h-full border border-gray-100">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Informações de <span
+                                class="gradient-text">Contato</span></h3>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">E-mail</h4>
+                                    <a href="mailto:spidernetsaf@gmail.com"
+                                        class="text-blue-600 hover:underline">spidernetsaf@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fab fa-whatsapp text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">WhatsApp</h4>
+                                    <a href="https://wa.me/5511940114797" target="_blank"
+                                        class="text-blue-600 hover:underline">(11) 94011-4797</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-user-tie text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-1">Responsável</h4>
+                                    <p class="text-gray-600">Davi Rubinho Stanis</p>
+                                    <p class="text-sm text-gray-500">Analista de Sistemas Sênior</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-gray-200">
+                            <h4 class="font-medium text-gray-800 mb-4">Conecte-se <span
+                                    class="gradient-text">Conosco</span></h4>
+                            <div class="flex space-x-4">
+                                <a href="https://wa.me/5511940114797" target="_blank"
+                                    class="bg-green-100 p-3 rounded-full text-green-600 hover:bg-green-200 transition duration-300 hover:scale-110">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" target="_blank"
+                                    class="bg-blue-100 p-3 rounded-full text-blue-600 hover:bg-blue-200 transition duration-300 hover:scale-110">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" target="_blank"
+                                    class="bg-pink-100 p-3 rounded-full text-pink-600 hover:bg-pink-200 transition duration-300 hover:scale-110">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" target="_blank"
+                                    class="bg-gray-100 p-3 rounded-full text-gray-600 hover:bg-gray-200 transition duration-300 hover:scale-110">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                            SN
+                        </div>
+                        <div class="ml-3">
+                            <h3 class="text-xl font-bold">SPIDERNET</h3>
+                            <p class="text-xs text-gray-400">Nós Confiamos em Deus</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Desenvolvendo soluções tecnológicas personalizadas com excelência, ética e inovação.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services"
+                                class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Desenvolvimento Sob
+                                Demanda
+                            </a></li>
+                        <li><a href="#services"
+                                class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Sistema para Igrejas
+                            </a></li>
+                        <li><a href="#services"
+                                class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Sistema para Clínicas
+                            </a></li>
+                        <li><a href="#services"
+                                class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Emissão de Notas
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Úteis</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home"
+                                class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Início
+                            </a></li>
+                        <li><a href="#about"
+                                class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Sobre Nós
+                            </a></li>
+                        <li><a href="#services"
+                                class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Serviços
+                            </a></li>
+                        <li><a href="#contact"
+                                class="text-gray-400 hover:text-white transition duration-300 flex items-center">
+                                <i class="fas fa-chevron-right text-xs mr-2 text-blue-400"></i> Contato
+                            </a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                            spidernetsaf@gmail.com
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-whatsapp mr-2 text-blue-400"></i>
+                            (11) 94011-4797
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2006 SPIDERNET. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Simulate form submission
+            setTimeout(function () {
+                document.getElementById('contact-form').reset();
+                const successMsg = document.getElementById('form-success');
+                successMsg.classList.remove('hidden');
+
+                // Hide success message after 5 seconds
+                setTimeout(function () {
+                    successMsg.classList.add('hidden');
+                }, 5000);
+            }, 1000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animate elements when they come into view
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .tech-pattern > div > div').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
